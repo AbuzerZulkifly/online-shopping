@@ -1,0 +1,41 @@
+body{
+  padding-top: 65px;
+  margin: 0;
+}
+span {
+
+  color: black;
+  font-size: large;
+
+}
+p{
+  margin: 0;
+}
+
+
+.link-primary{
+  color: cornflowerblue;
+}
+
+.link-primary:hover{
+
+  color: burlywood;
+  cursor: pointer;
+}
+
+.link-primary:active{
+  opacity: 0.1;
+}
+
+button{
+  transition: 0.18s;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  opacity: 0.2;
+}

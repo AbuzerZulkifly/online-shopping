@@ -1,0 +1,178 @@
+.main{
+  padding: 110px 100px 0px 120px;
+}
+.checkout-grid{
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  
+}
+
+.sub-container{
+  border: 1px solid gray;
+  margin-bottom: 40px;
+  padding: 40px;
+}
+
+.checkout-container {
+
+  margin-right: 15px;
+}
+
+
+
+.checkout-details-container {
+
+  display: flex;
+  flex-direction:row;
+  align-items:start;
+  align-content: center;
+  column-gap: 30px;
+  justify-content: space-evenly;
+  
+}
+
+.checkout-details-img {
+  width: 180px;
+  transition: 0.27s;
+}
+.checkout-details-img:hover{
+  transform: scale(1.9);
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 55px;
+  margin-top: 10px; 
+}
+
+.delivery-details{
+
+  font-size: 20px;
+  color: green;
+  font-weight: bolder;
+  width: 500px;
+  margin-bottom: 20px;
+  
+}
+
+
+.checkout-details{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.product-name p{
+  margin: 0;
+}
+
+.product-name,.product-price{
+  
+  margin-bottom: 14px;
+  font-weight: bold;
+  width: 265px;
+  font-size: larger;
+}
+
+.link-primary{
+  margin-left: 5px;
+}
+
+.delivery-details-container{
+
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
+  border-left: 2px solid gray;
+  padding-left: 12px;
+}
+.options{
+  font-size: larger;
+  font-weight: bolder;
+  margin-bottom: 16px;
+}
+
+.delivery-options{
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  column-gap: 5px;
+  margin-bottom: 20px;
+}
+
+.delivery-options-input{
+  margin-left: 0px;
+  margin-bottom: 20px;
+}
+.delivery-date{
+  font-weight: bold;
+  font-size: larger;
+  color: green;
+  font-stretch: extra-expanded;
+}
+
+.shipping-price,.shipping{
+  color: gray;
+  font-weight: lighter;
+  font-size: medium;
+  
+}
+
+.order-summary-container {
+  height: 340px;
+  border: 1px solid gray;
+  
+}
+
+.order-summary-title{
+  padding: 0px 0px 0px 20px;
+
+}
+
+.order-summary-details{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin-bottom: 16px;
+  padding: 0px 40px 0px 40px;
+  font-size: large;
+  color: rgb(45, 45, 45);
+
+}
+
+.order-summary-payment{
+  text-align: right;
+}
+
+.subtotal .order-summary-payment {
+  border-top: 2px solid gray;
+}
+
+.subtotal div {
+  padding-top: 10px;
+}
+
+.total-row{
+  border-top: 2px solid gray;
+  padding-top: 20px;
+  margin-top: 2px;
+}
+
+.order-summary-details.total-row {
+  color: rgb(177, 39, 4);
+  font-weight: bolder;
+  font-size: 20px;
+  margin-bottom: 19px;
+}
+.place-order{
+  display: flex;
+  justify-content: center;
+
+}
+
+.place-order-button {
+  padding: 10px 80px 10px 80px;
+  background-color: chocolate;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+  border: 0px solid;
+  transition: 0.27s;
+}
+

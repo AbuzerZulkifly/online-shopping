@@ -1,0 +1,34 @@
+.checkout-header{
+
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-evenly;
+  background-color: black;
+
+}
+
+.one-click-img-logo{
+  width: 115px; 
+  border-radius: 5px;
+}
+
+.one-click-img-logo:hover{
+  box-shadow: 7px 7px 10px rgba(100, 99, 99, 0.5);
+  border: 2px solid;
+}
+
+.checkout-items{
+  font-size: 29px;
+  color: white;
+  font-weight: bold;
+}
+
+span{
+  color: rgb(77, 77, 212);
+}

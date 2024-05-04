@@ -1,0 +1,131 @@
+.main{
+  max-width: 900px;
+  margin-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.title-order{
+  margin-top: 100px;
+  font-size: 30px;
+  font-weight: 800;
+  font-family: sans-serif;
+}
+
+.order-grid {
+
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 60px;
+
+  
+  
+
+}
+.order-grid-header{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  border: 1px solid ;
+  height: 30px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  padding: 20 25;
+  background-color: rgb(240, 237, 237);
+}
+
+.order-label{
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.order-label-sub {
+  font-size: medium;
+  color: rgb(94, 93, 93);
+  text-align: center;
+}
+
+.order-grid-container{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid;
+}
+
+.order-grid-product {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid;
+  border-top: 0px;
+  border-bottom: 0px;
+  margin-top: 0;
+  padding: 30px;
+  align-content: top;
+  align-items:flex-start;
+  column-gap: 50px;
+
+}
+
+.order-img {
+  width: 130px;
+  margin-top: 20px;
+}
+
+.order-product-details{
+
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  width: 400px;
+
+}
+
+.product-name{
+font-weight: bolder;
+font-size: large;
+}
+
+.product-arrival p,.product-quantity p{
+  font-weight: bold;
+  font-size: medium;
+  margin-top: 5px;
+
+}
+.order-product-details span,.product-quantity span{
+  font-weight: lighter;
+  font-size: 16px;
+}
+
+.buyagain-button{
+  margin-top: 15px;
+  background-color: rgb(89, 89, 243);
+  padding: 5px 20px;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0px;
+  border-radius: 8px;
+  padding-left: 10px;
+}
+
+.buyagain-button-img {
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 9px;
+  
+}
+
+.track-order{
+  margin-top: 10px;
+}
+
+.track-order-button{
+  
+  padding: 10px 60px;
+  border: 0px;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: rgb(189, 188, 188);
+}
