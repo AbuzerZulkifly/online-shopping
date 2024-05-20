@@ -11,6 +11,7 @@
   align-items: center;
   align-content: center;
   justify-content: space-between;
+  z-index: 2;
 }
 
 .one-click-header-left{
@@ -122,5 +123,5 @@
   font-size: 20px;
   position: absolute; 
   bottom: 35px;
-  right: 57px;
+  right: 53px;
 }
