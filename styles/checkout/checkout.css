@@ -154,6 +154,13 @@
   margin-top: 2px;
 }
 
+.quantity-details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+}
+
 .order-summary-details.total-row {
   color: rgb(177, 39, 4);
   font-weight: bolder;
@@ -176,3 +183,23 @@
   transition: 0.27s;
 }
 
+.quantity-input{
+  width: 50px;
+  display: none;
+}
+
+.save-quantity-link{
+  display: none;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.is-editing-quantity .quantity-input, .is-editing-quantity .save-quantity-link  {
+  
+  display: initial;
+  
+}
+
+.is-editing-quantity .quantity-label, .is-editing-quantity .update-link {
+display: none;
+}

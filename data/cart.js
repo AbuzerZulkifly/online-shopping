@@ -1,14 +1,24 @@
-export const cartList = [
-  {
-    productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-    Quantity: 2,
-  },
-  {
-    productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
-    Quantity: 1,
-  }
+export let cartList = JSON.parse(localStorage.getItem('cartList'));
 
-];
+if (!cartList) {
+  cartList = [
+    {
+      productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+      Quantity: 2,
+    },
+    {
+      productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+      Quantity: 1,
+    }
+  
+  ];
+  
+} 
+
+
+export function localStorageSave() {
+  localStorage.setItem('cartList', JSON.stringify(cartList))
+}
 
 export function addtoCart(productId, productcartValue) {
   let isMatchingItem
@@ -37,6 +47,7 @@ export function addtoCart(productId, productcartValue) {
         Quantity: 1
       })
        }
+       localStorageSave();
 }
 
 export function minustoCart(productId, productcartValue, productQuantity){
@@ -75,6 +86,7 @@ export function minustoCart(productId, productcartValue, productQuantity){
        }
 
 }
+localStorageSave();
 }
 
 export function updateCartQuantity(cartValue) {
@@ -84,4 +96,33 @@ export function updateCartQuantity(cartValue) {
         cartValue.innerHTML = cartQuantity        
     })
     
+}
+
+
+export function removeCartQuantity(productId) {
+// When we press the link of a particular product, except for that product every other product will be inserted into the new cart. 
+// if the product id does not match with clicked link of an product, then those products will be entered into the cart
+// oru product de link eh press pannal, ande product id ode match aahade ella product um cart ulluku save avum
+  const newCart = [];
+  cartList.forEach((cartItem) => {
+  if (cartItem.productId !== productId)
+    newCart.push(cartItem);
+
+  })
+  cartList = newCart
+  localStorageSave();
+}
+
+
+export function updateQuantity(productId, newQuantity) {
+
+ let matchingItem;
+ cartList.forEach((cartItem)=>{
+  if (productId === cartItem.productId)
+  {
+    matchingItem = cartItem
+  }
+ });
+ matchingItem.Quantity = newQuantity;
+ localStorageSave();
 }
