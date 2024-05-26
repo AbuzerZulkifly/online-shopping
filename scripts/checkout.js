@@ -1,6 +1,9 @@
 import {cartList, removeCartQuantity, updateQuantity, localStorageSave} from "../data/cart.js";
 import {productDetails } from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
+import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+import { deliveryOption } from "../data/delivery.js";
+
 
 
 let checkoutHtml = ``;
@@ -56,37 +59,7 @@ cartList.forEach((cartItem)=>{
           Choose a Delivery Option:
         </div>
 
-        <div class="delivery-options">
-          <input type="radio" checked class="delivery-options-input" name="delivery-options-${matchingProduct.id}">
-          <div class="delivery-date">
-            Tuesday June 22
-            <br>
-            <span class="shipping"> Shipping: </span>
-            <span class="shipping-price"> Free </span>
-          </div>
-        </div>
-
-
-        <div class="delivery-options">
-          <input type="radio" class="delivery-options-input" name="delivery-options-${matchingProduct.id}">
-          <div class="delivery-date">
-            Sunday June 12
-            <br>
-            <span class="shipping"> Shipping: </span>
-            <span class="shipping-price"> $5.00</span>
-          </div>
-        </div>
-
-
-        <div class="delivery-options">
-          <input type="radio" class="delivery-options-input" name="delivery-options-${matchingProduct.id}">
-          <div class="delivery-date">
-            Sunday June 5
-            <br>
-            <span class="shipping"> Shipping: </span>
-            <span class="shipping-price"> $7.99</span>
-          </div>
-        </div>
+        ${deliveryDateOption(matchingProduct)}
 
       </div>
 
@@ -96,6 +69,39 @@ cartList.forEach((cartItem)=>{
 
 `;
 });
+
+function deliveryDateOption(matchingProduct) {
+
+  let Deliveryhtml = ''
+  deliveryOption.forEach((deliveryOptions) => {
+
+    const today = dayjs();
+    const deliveryDate = today.add(deliveryOptions.days, 'days');
+    const dateString = deliveryDate.format('dddd, MMMM D')
+
+    const priceString = deliveryOptions.priceCents === 0
+    ? 'Free' : `$${formatCurrency(deliveryOptions.priceCents)}`
+
+    Deliveryhtml +=
+    `
+
+    <div class="delivery-options">
+    <input type="radio" class="delivery-options-input" name="delivery-options-${matchingProduct.id}">
+    <div class="delivery-date">
+      ${dateString}
+      <br>
+      <span class="shipping"> Shipping: </span>
+      <span class="shipping-price"> ${priceString}</span>
+    </div>
+  </div>
+    
+    
+    `
+
+  })
+  return Deliveryhtml;
+}
+
 document.querySelector('.js-checkout-details').innerHTML = checkoutHtml
 
 document.querySelectorAll('.js-delete-link')
@@ -140,10 +146,10 @@ document.querySelectorAll('.save-quantity-link')
     }
     else {
       updateQuantity(productId, newQuantity);
-      newQuantityValue.innerHTML = newQuantity;    
+      newQuantityValue.innerHTML = newQuantity;
+      cartList.Quantity = cartList.Quantity + newQuantity    
       localStorageSave();
       
     }
-    console.log(cartList.Quantity)
   })  
 })

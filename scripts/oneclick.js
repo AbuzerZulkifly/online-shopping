@@ -1,4 +1,4 @@
-import {cartList, addtoCart, minustoCart, updateCartQuantity} from "../data/cart.js";
+import {cartList, addtoCart, minustoCart, updateCartQuantity, localStorageSave} from "../data/cart.js";
 import {productDetails} from "../data/products.js";
 import { formatCurrency } from "./utils/money.js";
 
@@ -89,7 +89,7 @@ document.querySelector('.main-product-container').innerHTML = productHtml;
         <div class="product-cart-quantity js-product-cart-quantity-${products.id}">0</div>  
       </div>  
  */
-
+      
  
 
 document.querySelectorAll('.js-button-add-tocart').forEach((button) => {
@@ -104,7 +104,7 @@ document.querySelectorAll('.js-button-add-tocart').forEach((button) => {
 
      addtoCart(productId, productcartValue);
      updateCartQuantity(cartValue);
-    
+    localStorageSave();
   })
 })
 
@@ -119,7 +119,8 @@ document.querySelectorAll('.js-button-minus-tocart').forEach((button) => {
     let productQuantity = document.querySelector(`.product-cart-${productId}`)
   
     minustoCart(productId, productcartValue, productQuantity)
-    updateCartQuantity(cartValue);      
+    updateCartQuantity(cartValue);    
+    localStorageSave();  
     } 
 )})
 
