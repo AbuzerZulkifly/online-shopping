@@ -129,3 +129,18 @@ export function updateQuantity(productId, newQuantity) {
  matchingItem.Quantity = newQuantity;
  localStorageSave();
 }
+
+export function updateDeliveryOption(productId, deliveryId) {
+
+  let isMatchingItem
+  cartList.forEach((item) =>{
+  
+    if(productId === item.productId)
+    {
+      isMatchingItem = item
+    }
+   
+  });
+  isMatchingItem.deliveryId = deliveryId
+  localStorageSave();
+}
