@@ -1,10 +1,14 @@
-export let cartList = JSON.parse(localStorage.getItem('cartList'));
+export let cartList;
+
+loadFromStorage();
+export function loadFromStorage() {
+  cartList = JSON.parse(localStorage.getItem('cartList'));
 
 if (!cartList) {
   cartList = [
     {
       productId:'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-      Quantity: 2,
+      Quantity: 1,
       deliveryId: '1'
     },
     {
@@ -16,7 +20,7 @@ if (!cartList) {
   ];
   
 } 
-
+}
 
 export function localStorageSave() {
   localStorage.setItem('cartList', JSON.stringify(cartList))
