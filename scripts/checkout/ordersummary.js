@@ -32,8 +32,8 @@ cartList.forEach((cartItem)=>{
 
   checkoutHtml +=
 `
-
-  <div class="sub-container js-sub-container-${matchingProduct.id}">
+  
+  <div class="sub-container js-sub-container-test js-sub-container-${matchingProduct.id}">
     <div class="delivery-details"> Delivery Date: ${dateString}</div>  
     <div class="checkout-details-container">
       <div class="checkout-details-img-container">
@@ -47,7 +47,7 @@ cartList.forEach((cartItem)=>{
         <div class="product-price">
         ${formatCurrency(matchingProduct.priceCents)}
         </div>
-        <div class="quantity-details">
+        <div class="quantity-details js-quantity-details-test-${matchingProduct.id}">
           <span class="quantity-label">
             Quantity: <span class="js-quantity-value-${matchingProduct.id}">  ${cartItem.Quantity} </span>
           </span>
@@ -57,7 +57,7 @@ cartList.forEach((cartItem)=>{
           <input type="number" class="quantity-input js-quantity-input-${matchingProduct.id}"> 
           <span class="save-quantity-link link-primary" data-product-id="${matchingProduct.id}">Save</span>
           
-          <span class="delete-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">Delete</span>
+          <span class="delete-link link-primary js-delete-link js-delete-link-test-${matchingProduct.id} " data-product-id="${matchingProduct.id}">Delete</span>
           
         </div>
       </div>
